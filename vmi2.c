@@ -1,4 +1,4 @@
-//不指定pid，只指定hypercall
+//not specify pid，specify hypercall
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
