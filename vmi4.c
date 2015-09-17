@@ -1,4 +1,4 @@
-//不指定pid，不指定hypercall
+//not specify pid，not specify hypercall
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -13,6 +13,7 @@ addr_t vaddr, paddr;
 
 static int interrupted = 0;
 
+//hypercall table
 static const char *hypercall_address[39][2]={
 	{"do_set_trap_table","ffff82d08019cab7"},
 	{"do_mmu_update","ffff82d08018dc7f"},
@@ -68,6 +69,7 @@ void print_event(vmi_event_t *event){
     );
 }
 
+//callback function
 void mm_callback(vmi_instance_t vmi, vmi_event_t *event) {
 
     print_event(event);
