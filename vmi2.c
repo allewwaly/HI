@@ -72,7 +72,8 @@ int main(int argc, char **argv)
             paddr, paddr >> 12);
 	vmi_pause_vm(vmi);
 	SETUP_MEM_EVENT(&mm_event, paddr, VMI_MEMEVENT_PAGE,
-                    VMI_MEMACCESS_RW, mm_callback);
+                    VMI_MEMACCESS_RWX, mm_callback);
+	vmi_register_event(vmi,&mm_event);
 	vmi_resume_vm(vmi);
 	while(!interrupted){
         	status = vmi_events_listen(vmi,500);
