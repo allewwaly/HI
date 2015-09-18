@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 		printf("Preparing memory event to catch HYPERCALL %s at PA 0x%lx, page 0x%lx\n\n",
 	            hypercall_name, paddr, paddr >> 12);
 		SETUP_MEM_EVENT(&mm_event, paddr, VMI_MEMEVENT_PAGE,
-        	            VMI_MEMACCESS_RW, mm_callback);
+        	            VMI_MEMACCESS_RWX, mm_callback);
 	}
 	vmi_resume_vm(vmi);
 	while(!interrupted){
