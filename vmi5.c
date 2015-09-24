@@ -1,4 +1,4 @@
-//not specify pid，not specify hypercall
+//not specify hypercall, comparing vaddr and output hypercall name in callback function
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -112,14 +112,14 @@ int main(int argc, char **argv)
 		char *vaddr_str=hypercall_address[i][1];
 		char *hypercall_name=hypercall_address[i][0];
 	        vaddr[i] =(addr_t) strtoul(vaddr_str, NULL, 16);
-		printf("virtual address is:%lx\n",vaddr);
+		printf("virtual address is:%lx\n",vaddr[i]);
 		//printf("pid is: %d\n",pid);
         	paddr[i] = vmi_translate_kv2p(vmi,vaddr[i]);
 	        printf("physical address is::%lx\n",paddr[i]);
 		mm_event[i].mem_event.gla2 = vaddr[i];//add comparing gla to memory event structure
 		mm_event[i].mem_event.hypercall=hypercall_name;
 		printf("Preparing memory event to catch HYPERCALL %s at PA 0x%lx, page 0x%lx\n\n",
-	            hypercall_name, paddr, paddr[i] >> 12);
+	            hypercall_name, paddr[i], paddr[i] >> 12);
 		SETUP_MEM_EVENT(&mm_event[i], paddr[i], VMI_MEMEVENT_PAGE,
         	            VMI_MEMACCESS_RWX, mm_callback);
 		vmi_register_event(vmi,&mm_event[i]);

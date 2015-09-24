@@ -1,4 +1,4 @@
-//not specify pid，not specify hypercall
+//not working, see vmi5.c
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

@@ -1,4 +1,4 @@
-//not specify pid，specify hypercall
+//specify hypercall vaddr
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
