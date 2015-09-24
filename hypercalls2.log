@@ -1,0 +1,124 @@
+success to init LibVMI
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_set_trap_table at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_mmu_update at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_set_gdt at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_stack_switch at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_set_callbacks at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_fpu_taskswitch at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_sched_op_compat at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_platform_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_set_debugreg at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_get_debugreg at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_update_descriptor at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_ni_hypercall at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_memory_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_multicall at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_update_va_mapping at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_set_timer_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_event_channel_op_compat at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_xen_version at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_console_io at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_physdev_op_compat at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_grant_table_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_vm_assist at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_update_va_mapping_otherdomain at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_iret at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_vcpu_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_set_segment_base at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_mmuext_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_xsm_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_nmi_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to catch HYPERCALL do_sched_op at PA 0x6024a0, page 0x0
+
+virtual address is:602360
+physical address is::0
+Preparing memory event to cat

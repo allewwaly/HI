@@ -1,0 +1,612 @@
+success to init LibVMI
+virtual address is:ffff82d080102fa9
+physical address is::7f302fa9
+Preparing memory event to catch HYPERCALL do_domctl at PA 0x7f302fa9, page 0x7f302
+
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c60) gla ffff82d080102c60 (vcpu 0)
+	Event on same page: ffff82d080102c60, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c62) gla ffff82d080102c62 (vcpu 0)
+	Event on same page: ffff82d080102c62, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c65) gla ffff82d080102c65 (vcpu 0)
+	Event on same page: ffff82d080102c65, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c67) gla ffff82d080102c67 (vcpu 0)
+	Event on same page: ffff82d080102c67, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c69) gla ffff82d080102c69 (vcpu 0)
+	Event on same page: ffff82d080102c69, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c6b) gla ffff82d080102c6b (vcpu 0)
+	Event on same page: ffff82d080102c6b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c6c) gla ffff82d080102c6c (vcpu 0)
+	Event on same page: ffff82d080102c6c, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c6f) gla ffff82d080102c6f (vcpu 0)
+	Event on same page: ffff82d080102c6f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c70) gla ffff82d080102c70 (vcpu 0)
+	Event on same page: ffff82d080102c70, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c74) gla ffff82d080102c74 (vcpu 0)
+	Event on same page: ffff82d080102c74, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c77) gla ffff82d080102c77 (vcpu 0)
+	Event on same page: ffff82d080102c77, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c7e) gla ffff82d080102c7e (vcpu 0)
+	Event on same page: ffff82d080102c7e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c85) gla ffff82d080102c85 (vcpu 0)
+	Event on same page: ffff82d080102c85, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c88) gla ffff82d080102c88 (vcpu 0)
+	Event on same page: ffff82d080102c88, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c8f) gla ffff82d080102c8f (vcpu 0)
+	Event on same page: ffff82d080102c8f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c92) gla ffff82d080102c92 (vcpu 0)
+	Event on same page: ffff82d080102c92, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c98) gla ffff82d080102c98 (vcpu 0)
+	Event on same page: ffff82d080102c98, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c9b) gla ffff82d080102c9b (vcpu 0)
+	Event on same page: ffff82d080102c9b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000c9e) gla ffff82d080102c9e (vcpu 0)
+	Event on same page: ffff82d080102c9e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ca4) gla ffff82d080102ca4 (vcpu 0)
+	Event on same page: ffff82d080102ca4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000caa) gla ffff82d080102caa (vcpu 0)
+	Event on same page: ffff82d080102caa, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cad) gla ffff82d080102cad (vcpu 0)
+	Event on same page: ffff82d080102cad, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cb0) gla ffff82d080102cb0 (vcpu 0)
+	Event on same page: ffff82d080102cb0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cb3) gla ffff82d080102cb3 (vcpu 0)
+	Event on same page: ffff82d080102cb3, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cb6) gla ffff82d080102cb6 (vcpu 0)
+	Event on same page: ffff82d080102cb6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cbb) gla ffff82d080102cbb (vcpu 0)
+	Event on same page: ffff82d080102cbb, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cbd) gla ffff82d080102cbd (vcpu 0)
+	Event on same page: ffff82d080102cbd, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cc0) gla ffff82d080102cc0 (vcpu 0)
+	Event on same page: ffff82d080102cc0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cc5) gla ffff82d080102cc5 (vcpu 0)
+	Event on same page: ffff82d080102cc5, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cc8) gla ffff82d080102cc8 (vcpu 0)
+	Event on same page: ffff82d080102cc8, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cce) gla ffff82d080102cce (vcpu 0)
+	Event on same page: ffff82d080102cce, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cd1) gla ffff82d080102cd1 (vcpu 0)
+	Event on same page: ffff82d080102cd1, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cd4) gla ffff82d080102cd4 (vcpu 0)
+	Event on same page: ffff82d080102cd4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cd6) gla ffff82d080102cd6 (vcpu 0)
+	Event on same page: ffff82d080102cd6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cd9) gla ffff82d080102cd9 (vcpu 0)
+	Event on same page: ffff82d080102cd9, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cdc) gla ffff82d080102cdc (vcpu 0)
+	Event on same page: ffff82d080102cdc, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ce3) gla ffff82d080102ce3 (vcpu 0)
+	Event on same page: ffff82d080102ce3, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ce7) gla ffff82d080102ce7 (vcpu 0)
+	Event on same page: ffff82d080102ce7, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cea) gla ffff82d080102cea (vcpu 0)
+	Event on same page: ffff82d080102cea, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ced) gla ffff82d080102ced (vcpu 0)
+	Event on same page: ffff82d080102ced, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cf4) gla ffff82d080102cf4 (vcpu 0)
+	Event on same page: ffff82d080102cf4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cf8) gla ffff82d080102cf8 (vcpu 0)
+	Event on same page: ffff82d080102cf8, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000cfc) gla ffff82d080102cfc (vcpu 0)
+	Event on same page: ffff82d080102cfc, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d00) gla ffff82d080102d00 (vcpu 0)
+	Event on same page: ffff82d080102d00, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d03) gla ffff82d080102d03 (vcpu 0)
+	Event on same page: ffff82d080102d03, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d05) gla ffff82d080102d05 (vcpu 0)
+	Event on same page: ffff82d080102d05, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d08) gla ffff82d080102d08 (vcpu 0)
+	Event on same page: ffff82d080102d08, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d0a) gla ffff82d080102d0a (vcpu 0)
+	Event on same page: ffff82d080102d0a, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d0e) gla ffff82d080102d0e (vcpu 0)
+	Event on same page: ffff82d080102d0e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d10) gla ffff82d080102d10 (vcpu 0)
+	Event on same page: ffff82d080102d10, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d14) gla ffff82d080102d14 (vcpu 0)
+	Event on same page: ffff82d080102d14, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d17) gla ffff82d080102d17 (vcpu 0)
+	Event on same page: ffff82d080102d17, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d1f) gla ffff82d080102d1f (vcpu 0)
+	Event on same page: ffff82d080102d1f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d26) gla ffff82d080102d26 (vcpu 0)
+	Event on same page: ffff82d080102d26, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d2a) gla ffff82d080102d2a (vcpu 0)
+	Event on same page: ffff82d080102d2a, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d32) gla ffff82d080102d32 (vcpu 0)
+	Event on same page: ffff82d080102d32, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d34) gla ffff82d080102d34 (vcpu 0)
+	Event on same page: ffff82d080102d34, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d36) gla ffff82d080102d36 (vcpu 0)
+	Event on same page: ffff82d080102d36, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d38) gla ffff82d080102d38 (vcpu 0)
+	Event on same page: ffff82d080102d38, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d3b) gla ffff82d080102d3b (vcpu 0)
+	Event on same page: ffff82d080102d3b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d3d) gla ffff82d080102d3d (vcpu 0)
+	Event on same page: ffff82d080102d3d, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d44) gla ffff82d080102d44 (vcpu 0)
+	Event on same page: ffff82d080102d44, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d48) gla ffff82d080102d48 (vcpu 0)
+	Event on same page: ffff82d080102d48, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d4b) gla ffff82d080102d4b (vcpu 0)
+	Event on same page: ffff82d080102d4b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d53) gla ffff82d080102d53 (vcpu 0)
+	Event on same page: ffff82d080102d53, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d55) gla ffff82d080102d55 (vcpu 0)
+	Event on same page: ffff82d080102d55, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d58) gla ffff82d080102d58 (vcpu 0)
+	Event on same page: ffff82d080102d58, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d5b) gla ffff82d080102d5b (vcpu 0)
+	Event on same page: ffff82d080102d5b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d5d) gla ffff82d080102d5d (vcpu 0)
+	Event on same page: ffff82d080102d5d, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d5f) gla ffff82d080102d5f (vcpu 0)
+	Event on same page: ffff82d080102d5f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d62) gla ffff82d080102d62 (vcpu 0)
+	Event on same page: ffff82d080102d62, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d64) gla ffff82d080102d64 (vcpu 0)
+	Event on same page: ffff82d080102d64, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d66) gla ffff82d080102d66 (vcpu 0)
+	Event on same page: ffff82d080102d66, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d68) gla ffff82d080102d68 (vcpu 0)
+	Event on same page: ffff82d080102d68, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d6b) gla ffff82d080102d6b (vcpu 0)
+	Event on same page: ffff82d080102d6b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d72) gla ffff82d080102d72 (vcpu 0)
+	Event on same page: ffff82d080102d72, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d75) gla ffff82d080102d75 (vcpu 0)
+	Event on same page: ffff82d080102d75, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d7b) gla ffff82d080102d7b (vcpu 0)
+	Event on same page: ffff82d080102d7b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d7e) gla ffff82d080102d7e (vcpu 0)
+	Event on same page: ffff82d080102d7e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d84) gla ffff82d080102d84 (vcpu 0)
+	Event on same page: ffff82d080102d84, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d88) gla ffff82d080102d88 (vcpu 0)
+	Event on same page: ffff82d080102d88, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d8c) gla ffff82d080102d8c (vcpu 0)
+	Event on same page: ffff82d080102d8c, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d90) gla ffff82d080102d90 (vcpu 0)
+	Event on same page: ffff82d080102d90, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d94) gla ffff82d080102d94 (vcpu 0)
+	Event on same page: ffff82d080102d94, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d98) gla ffff82d080102d98 (vcpu 0)
+	Event on same page: ffff82d080102d98, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000d9c) gla ffff82d080102d9c (vcpu 0)
+	Event on same page: ffff82d080102d9c, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000da0) gla ffff82d080102da0 (vcpu 0)
+	Event on same page: ffff82d080102da0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000da2) gla ffff82d080102da2 (vcpu 0)
+	Event on same page: ffff82d080102da2, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000da6) gla ffff82d080102da6 (vcpu 0)
+	Event on same page: ffff82d080102da6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000daa) gla ffff82d080102daa (vcpu 0)
+	Event on same page: ffff82d080102daa, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000dac) gla ffff82d080102dac (vcpu 0)
+	Event on same page: ffff82d080102dac, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000db6) gla ffff82d080102db6 (vcpu 0)
+	Event on same page: ffff82d080102db6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000dba) gla ffff82d080102dba (vcpu 0)
+	Event on same page: ffff82d080102dba, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000dc2) gla ffff82d080102dc2 (vcpu 0)
+	Event on same page: ffff82d080102dc2, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000dc6) gla ffff82d080102dc6 (vcpu 0)
+	Event on same page: ffff82d080102dc6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e28) gla ffff82d080102e28 (vcpu 0)
+	Event on same page: ffff82d080102e28, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e2b) gla ffff82d080102e2b (vcpu 0)
+	Event on same page: ffff82d080102e2b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000eb8) gla ffff82d080102eb8 (vcpu 0)
+	Event on same page: ffff82d080102eb8, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ec2) gla ffff82d080102ec2 (vcpu 0)
+	Event on same page: ffff82d080102ec2, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ec5) gla ffff82d080102ec5 (vcpu 0)
+	Event on same page: ffff82d080102ec5, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e45) gla ffff82d080102e45 (vcpu 0)
+	Event on same page: ffff82d080102e45, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e4b) gla ffff82d080102e4b (vcpu 0)
+	Event on same page: ffff82d080102e4b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e4e) gla ffff82d080102e4e (vcpu 0)
+	Event on same page: ffff82d080102e4e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e55) gla ffff82d080102e55 (vcpu 0)
+	Event on same page: ffff82d080102e55, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e58) gla ffff82d080102e58 (vcpu 0)
+	Event on same page: ffff82d080102e58, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e5b) gla ffff82d080102e5b (vcpu 0)
+	Event on same page: ffff82d080102e5b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e62) gla ffff82d080102e62 (vcpu 0)
+	Event on same page: ffff82d080102e62, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e65) gla ffff82d080102e65 (vcpu 0)
+	Event on same page: ffff82d080102e65, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e69) gla ffff82d080102e69 (vcpu 0)
+	Event on same page: ffff82d080102e69, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e6d) gla ffff82d080102e6d (vcpu 0)
+	Event on same page: ffff82d080102e6d, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e71) gla ffff82d080102e71 (vcpu 0)
+	Event on same page: ffff82d080102e71, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e76) gla ffff82d080102e76 (vcpu 0)
+	Event on same page: ffff82d080102e76, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e79) gla ffff82d080102e79 (vcpu 0)
+	Event on same page: ffff82d080102e79, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e7b) gla ffff82d080102e7b (vcpu 0)
+	Event on same page: ffff82d080102e7b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e7d) gla ffff82d080102e7d (vcpu 0)
+	Event on same page: ffff82d080102e7d, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e80) gla ffff82d080102e80 (vcpu 0)
+	Event on same page: ffff82d080102e80, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e87) gla ffff82d080102e87 (vcpu 0)
+	Event on same page: ffff82d080102e87, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e8b) gla ffff82d080102e8b (vcpu 0)
+	Event on same page: ffff82d080102e8b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e92) gla ffff82d080102e92 (vcpu 0)
+	Event on same page: ffff82d080102e92, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e96) gla ffff82d080102e96 (vcpu 0)
+	Event on same page: ffff82d080102e96, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e9a) gla ffff82d080102e9a (vcpu 0)
+	Event on same page: ffff82d080102e9a, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e9b) gla ffff82d080102e9b (vcpu 0)
+	Event on same page: ffff82d080102e9b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e9c) gla ffff82d080102e9c (vcpu 0)
+	Event on same page: ffff82d080102e9c, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000e9e) gla ffff82d080102e9e (vcpu 0)
+	Event on same page: ffff82d080102e9e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ea0) gla ffff82d080102ea0 (vcpu 0)
+	Event on same page: ffff82d080102ea0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ea2) gla ffff82d080102ea2 (vcpu 0)
+	Event on same page: ffff82d080102ea2, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ea4) gla ffff82d080102ea4 (vcpu 0)
+	Event on same page: ffff82d080102ea4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000350) gla ffff82d080102350 (vcpu 0)
+	Event on same page: ffff82d080102350, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000352) gla ffff82d080102352 (vcpu 0)
+	Event on same page: ffff82d080102352, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000354) gla ffff82d080102354 (vcpu 0)
+	Event on same page: ffff82d080102354, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000356) gla ffff82d080102356 (vcpu 0)
+	Event on same page: ffff82d080102356, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000357) gla ffff82d080102357 (vcpu 0)
+	Event on same page: ffff82d080102357, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000358) gla ffff82d080102358 (vcpu 0)
+	Event on same page: ffff82d080102358, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 00035b) gla ffff82d08010235b (vcpu 0)
+	Event on same page: ffff82d08010235b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 00035f) gla ffff82d08010235f (vcpu 0)
+	Event on same page: ffff82d08010235f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000362) gla ffff82d080102362 (vcpu 0)
+	Event on same page: ffff82d080102362, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000368) gla ffff82d080102368 (vcpu 0)
+	Event on same page: ffff82d080102368, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 00036a) gla ffff82d08010236a (vcpu 0)
+	Event on same page: ffff82d08010236a, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000371) gla ffff82d080102371 (vcpu 0)
+	Event on same page: ffff82d080102371, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000375) gla ffff82d080102375 (vcpu 0)
+	Event on same page: ffff82d080102375, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000378) gla ffff82d080102378 (vcpu 0)
+	Event on same page: ffff82d080102378, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000380) gla ffff82d080102380 (vcpu 0)
+	Event on same page: ffff82d080102380, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000384) gla ffff82d080102384 (vcpu 0)
+	Event on same page: ffff82d080102384, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 00038b) gla ffff82d08010238b (vcpu 0)
+	Event on same page: ffff82d08010238b, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000bd0) gla ffff82d080102bd0 (vcpu 0)
+	Event on same page: ffff82d080102bd0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000bd6) gla ffff82d080102bd6 (vcpu 0)
+	Event on same page: ffff82d080102bd6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009a0) gla ffff82d0801029a0 (vcpu 0)
+	Event on same page: ffff82d0801029a0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009a2) gla ffff82d0801029a2 (vcpu 0)
+	Event on same page: ffff82d0801029a2, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009a5) gla ffff82d0801029a5 (vcpu 0)
+	Event on same page: ffff82d0801029a5, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009a7) gla ffff82d0801029a7 (vcpu 0)
+	Event on same page: ffff82d0801029a7, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009a9) gla ffff82d0801029a9 (vcpu 0)
+	Event on same page: ffff82d0801029a9, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009ab) gla ffff82d0801029ab (vcpu 0)
+	Event on same page: ffff82d0801029ab, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009ae) gla ffff82d0801029ae (vcpu 0)
+	Event on same page: ffff82d0801029ae, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009b3) gla ffff82d0801029b3 (vcpu 0)
+	Event on same page: ffff82d0801029b3, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009b4) gla ffff82d0801029b4 (vcpu 0)
+	Event on same page: ffff82d0801029b4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009b7) gla ffff82d0801029b7 (vcpu 0)
+	Event on same page: ffff82d0801029b7, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009b8) gla ffff82d0801029b8 (vcpu 0)
+	Event on same page: ffff82d0801029b8, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009bb) gla ffff82d0801029bb (vcpu 0)
+	Event on same page: ffff82d0801029bb, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009be) gla ffff82d0801029be (vcpu 0)
+	Event on same page: ffff82d0801029be, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009c2) gla ffff82d0801029c2 (vcpu 0)
+	Event on same page: ffff82d0801029c2, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009c4) gla ffff82d0801029c4 (vcpu 0)
+	Event on same page: ffff82d0801029c4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009c9) gla ffff82d0801029c9 (vcpu 0)
+	Event on same page: ffff82d0801029c9, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009ce) gla ffff82d0801029ce (vcpu 0)
+	Event on same page: ffff82d0801029ce, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009d1) gla ffff82d0801029d1 (vcpu 0)
+	Event on same page: ffff82d0801029d1, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009d4) gla ffff82d0801029d4 (vcpu 0)
+	Event on same page: ffff82d0801029d4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009da) gla ffff82d0801029da (vcpu 0)
+	Event on same page: ffff82d0801029da, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009dd) gla ffff82d0801029dd (vcpu 0)
+	Event on same page: ffff82d0801029dd, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009e0) gla ffff82d0801029e0 (vcpu 0)
+	Event on same page: ffff82d0801029e0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009e3) gla ffff82d0801029e3 (vcpu 0)
+	Event on same page: ffff82d0801029e3, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009e6) gla ffff82d0801029e6 (vcpu 0)
+	Event on same page: ffff82d0801029e6, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009ea) gla ffff82d0801029ea (vcpu 0)
+	Event on same page: ffff82d0801029ea, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009ee) gla ffff82d0801029ee (vcpu 0)
+	Event on same page: ffff82d0801029ee, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009f1) gla ffff82d0801029f1 (vcpu 0)
+	Event on same page: ffff82d0801029f1, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009f5) gla ffff82d0801029f5 (vcpu 0)
+	Event on same page: ffff82d0801029f5, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009fa) gla ffff82d0801029fa (vcpu 0)
+	Event on same page: ffff82d0801029fa, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009fc) gla ffff82d0801029fc (vcpu 0)
+	Event on same page: ffff82d0801029fc, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a58) gla ffff82d080102a58 (vcpu 0)
+	Event on same page: ffff82d080102a58, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a5f) gla ffff82d080102a5f (vcpu 0)
+	Event on same page: ffff82d080102a5f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a63) gla ffff82d080102a63 (vcpu 0)
+	Event on same page: ffff82d080102a63, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a65) gla ffff82d080102a65 (vcpu 0)
+	Event on same page: ffff82d080102a65, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a68) gla ffff82d080102a68 (vcpu 0)
+	Event on same page: ffff82d080102a68, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a6f) gla ffff82d080102a6f (vcpu 0)
+	Event on same page: ffff82d080102a6f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a72) gla ffff82d080102a72 (vcpu 0)
+	Event on same page: ffff82d080102a72, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a76) gla ffff82d080102a76 (vcpu 0)
+	Event on same page: ffff82d080102a76, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a7c) gla ffff82d080102a7c (vcpu 0)
+	Event on same page: ffff82d080102a7c, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a7e) gla ffff82d080102a7e (vcpu 0)
+	Event on same page: ffff82d080102a7e, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ac0) gla ffff82d080102ac0 (vcpu 0)
+	Event on same page: ffff82d080102ac0, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000ac5) gla ffff82d080102ac5 (vcpu 0)
+	Event on same page: ffff82d080102ac5, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a85) gla ffff82d080102a85 (vcpu 0)
+	Event on same page: ffff82d080102a85, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a88) gla ffff82d080102a88 (vcpu 0)
+	Event on same page: ffff82d080102a88, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 0009fe) gla ffff82d0801029fe (vcpu 0)
+	Event on same page: ffff82d0801029fe, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a01) gla ffff82d080102a01 (vcpu 0)
+	Event on same page: ffff82d080102a01, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a50) gla ffff82d080102a50 (vcpu 0)
+	Event on same page: ffff82d080102a50, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a52) gla ffff82d080102a52 (vcpu 0)
+	Event on same page: ffff82d080102a52, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a95) gla ffff82d080102a95 (vcpu 0)
+	Event on same page: ffff82d080102a95, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a98) gla ffff82d080102a98 (vcpu 0)
+	Event on same page: ffff82d080102a98, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a9d) gla ffff82d080102a9d (vcpu 0)
+	Event on same page: ffff82d080102a9d, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000a9f) gla ffff82d080102a9f (vcpu 0)
+	Event on same page: ffff82d080102a9f, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000aa3) gla ffff82d080102aa3 (vcpu 0)
+	Event on same page: ffff82d080102aa3, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000aa4) gla ffff82d080102aa4 (vcpu 0)
+	Event on same page: ffff82d080102aa4, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000aa5) gla ffff82d080102aa5 (vcpu 0)
+	Event on same page: ffff82d080102aa5, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000aa7) gla ffff82d080102aa7 (vcpu 0)
+	Event on same page: ffff82d080102aa7, but not the hypercall: do_domctl
+}
+	PAGE 7f302fa9 ACCESS: --x for GFN 7f302 (offset 000aa9) gla ffff82d08010
