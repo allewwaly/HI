@@ -199,9 +199,10 @@ int main(int argc, char **argv)
 	            continue;
 	        }
 	        if(!record->event){//if the memory already being setup events
+			record->event = g_malloc0(sizeof(vmi_event_t));
 			mm_event[i].mem_event.gla2 = va;//add comparing gla to memory event structure
 			mm_event[i].mem_event.hypercall=hypercall_name;
-			SETUP_MEM_EVENT(&mm_event[i], pa, VMI_MEMEVENT_PAGE,VMI_MEMACCESS_RW, trap_guard);
+			SETUP_MEM_EVENT(&mm_event[i], pa, VMI_MEMEVENT_PAGE,VMI_MEMACCESS_X, trap_guard);
 			if(VMI_FAILURE==vmi_register_event(vmi,&mm_event[i])){
 				printf("*** FAILED TO REGISTER MEMORY GUARD @ PAGE 0x%lx ***\n", pa >> 12);
 				free(record->event);

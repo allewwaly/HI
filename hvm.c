@@ -6,7 +6,7 @@
 #include <libvmi/libvmi.h>
 #include <libvmi/events.h>
 
-#define num 12
+#define num 10
 reg_t cr3;
 //vmi_pid_t pid;
 vmi_event_t mm_event[num];
@@ -22,9 +22,9 @@ static const char *hypercall_address[num][2]={
 	{"hvm_physdev_op","ffff82d0801c63fb"},
 	{"do_xen_version","ffff82d080112130"},
 	{"do_console_io","ffff82d08013fbb4"},
-	{"do_event_channel_op","ffff82d080107e07"},
+	//{"do_event_channel_op","ffff82d080107e07"},
 	//{"do_sched_op","ffff82d080128134"},
-	{"do_set_timer_op","ffff82d0801284f0"},
+	//{"do_set_timer_op","ffff82d0801284f0"},
 	{"do_xsm_op","ffff82d08015917f"},
 	{"do_hvm_op","ffff82d0801c988e"},
 	//{"do_sysctl","ffff82d08012aba9"},
@@ -50,7 +50,7 @@ void mm_callback(vmi_instance_t vmi, vmi_event_t *event) {
 
     print_event(event);
 
-    if(event->mem_event.gla == event->mem_event.gla2) {
+    if(event->mem_event.gla > event->mem_event.gla2-7 && event->mem_event.gla <= event->mem_event.gla2+7) {
         printf("\tCought the original hypercall executing again!");
         vmi_clear_event(vmi, event);
         interrupted = 1;
