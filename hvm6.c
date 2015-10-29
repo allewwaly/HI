@@ -193,6 +193,7 @@ int main(int argc, char **argv)
 
 	int i;
 	vmi_pause_vm(vmi);
+	//inject int3 to every hypercall handler and register memory event
 	for (i = 0; i < num; i++) {
 		char *va_str=hypercall_address[i][1];
 		char *hypercall_name=hypercall_address[i][0];
