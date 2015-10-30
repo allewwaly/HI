@@ -1,4 +1,3 @@
-//trap all HVM hypercalls, listen on events in byte granularity.
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -74,7 +73,6 @@ static struct hypercall_table hypercalls[num]={
         {"hvm_physdev_op",0xffff82d0801c63fb,104},
 };
 
-// This is the callback when an execute or a read event happens
 void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
 
     uint8_t trap = 0xCC;
@@ -91,9 +89,10 @@ void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
 void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
     addr_t pa = (event->interrupt_event.gfn << 12) + event->interrupt_event.offset;
     printf("interrupt event happened at pa 0x%lx\n",pa);
+
     //we need to distinguish normal int3 interrupt and injected one
     //for normal one (debugger), just reinject
-    //for injected one, write back the original value to make it execute
+    //for injected one, write back the original value to make it executable
 
     GHashTable *containers = event->data;
     GHashTableIter i;
@@ -138,7 +137,16 @@ int main(int argc, char **argv)
 	for (i = 0; i < num; i++) {
 		va=hypercalls[i].address;
 		char *hypercall_name=hypercalls[i].name;
+		//obtain pa using CR3 instead
+		//reg_t cr3;
+		//vmi_get_vcpureg(vmi, &cr3, CR3, 0);
+		//pa = vmi_pagetable_lookup(vmi, cr3, va);
 		pa = vmi_translate_kv2p(vmi,va);
+		if (!pa){
+		    printf("failed to obtain pa of hypercall %s\n",hypercall_name);
+		    continue;
+		}
+
         	printf("\n\nTrying to trap HYPERCALL %s @ VA 0x%lx PA 0x%lx PAGE 0x%lx\n", hypercall_name, va, pa, pa >> 12);
 
 		vmi_read_8_pa(vmi, pa, &byte);//read the first byte of the pa
