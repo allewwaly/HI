@@ -1,4 +1,3 @@
-//memory execute events + inject traps
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -16,11 +15,10 @@
 
 static int interrupted = 0;
 
-struct memevent{
+struct interevent{
 	addr_t pa;
 	uint8_t backup;
 	char *hypercall;
-	vmi_event_t *event;
 }__attribute__ ((packed));
 
 struct hypercall_table{
@@ -85,58 +83,49 @@ void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
         pa = (event->interrupt_event.gfn << 12) + event->interrupt_event.offset;
         printf("Resetting trap @ 0x%lx.\n", pa);
         vmi_write_8_pa(vmi, pa, &trap);
-    }else {
-
-        vmi_register_event(vmi, event);
-        reg_t cr3;
-        vmi_get_vcpureg(vmi, &cr3, CR3, event->vcpu_id);
-        pa = (event->mem_event.gfn << 12) + event->mem_event.offset;
-
-        GHashTable *containers = event->data;
-        GHashTableIter i;
-        addr_t *key = NULL;
-        struct memevent *s = NULL;
-        ghashtable_foreach(containers, i, key, s)
-        {
-            if (pa > s->pa - 7 && pa <= s->pa + 7) {
-                printf("Violation @ 0x%lx. Resetting trap @ 0x%lx.\n", pa, s->pa);
-                vmi_write_8_pa(vmi, s->pa, &trap);
-            }
-        }
     }
 }
 
 void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
-    addr_t pa = (event->mem_event.gfn << 12) + event->mem_event.offset;
-    printf("memory event happened at pa 0x%lx of hypercall %s\n",pa,event->mem_event.hypercall);
-    vmi_clear_event(vmi, event);
+    addr_t pa = (event->interrupt_event.gfn << 12) + event->interrupt_event.offset;
+    printf("interrupt event happened at pa 0x%lx\n",pa);
+    vmi_clear_event(vmi, event);//important!
 
     //we need to distinguish normal int3 interrupt and injected one
     //for normal one (debugger), just reinject
     //for injected one, write back the original value to make it executable
-    if (event->mem_event.out_access & VMI_MEMACCESS_X) {
- 	    printf("X event happened\n");
-	    GHashTable *containers = event->data;
-	    GHashTableIter i;
-	    addr_t *key = NULL;
-	    struct memevent *s = NULL;
-	    ghashtable_foreach(containers, i, key, s)//why write every byte back? shouldn't it only write back the byte where X event happens?
-	    {
-		if(s){
-		    if (pa > s->pa - 7 && pa <= s->pa + 7){
-        	        printf("** Mem event removing trap 0x%lx\n", s->pa);
- 	                vmi_write_8_pa(vmi, s->pa, &s->backup);//recover the original value
- 		    }
-		}
-		else printf("not guarded address\n");
-	    }
-	    vmi_step_event(vmi, event, event->vcpu_id, 1, vmi_reset_trap);
+
+    GHashTable *containers = event->data;
+    GHashTableIter i;
+    addr_t *key = NULL;
+    struct interevent *s = NULL;
+    ghashtable_foreach(containers, i, key, s)
+    {
+	if (pa > s->pa - 7 && pa <= s->pa + 7){
+		printf("hypercall %s happend at pa 0x%lx \n",s->hypercall,s->pa);
+                vmi_write_8_pa(vmi, s->pa, &s->backup);
+                event->interrupt_event.reinject = 0;
+                vmi_step_event(vmi, event, event->vcpu_id, 1, vmi_reset_trap);
+	}
+	else
+		event->interrupt_event.reinject = 1;
     }
 }
 
+static void close_handler(int sig){
+    interrupted = sig;
+}
 
 int main(int argc, char **argv)
 {
+    struct sigaction act;
+    act.sa_handler = close_handler;
+    act.sa_flags = 0;
+    sigemptyset(&act.sa_mask);
+    sigaction(SIGHUP,  &act, NULL);
+    sigaction(SIGTERM, &act, NULL);
+    sigaction(SIGINT,  &act, NULL);
+    sigaction(SIGALRM, &act, NULL);
 	addr_t va, pa;
         vmi_instance_t vmi = NULL;
         status_t status = VMI_SUCCESS;
@@ -147,23 +136,26 @@ int main(int argc, char **argv)
         }
         char *name=argv[1];
 	//vmi_pid_t pid=atoi(argv[3]);how to init a vmi for hypervisor?
-        if (vmi_init(&vmi, VMI_AUTO | VMI_INIT_COMPLETE | VMI_INIT_EVENTS, name) == VMI_FAILURE) {//initialize th vmi instance with event enabled
+        if (vmi_init(&vmi, VMI_AUTO | VMI_INIT_PARTIAL | VMI_INIT_EVENTS, name) == VMI_FAILURE) {//initialize th vmi instance with event enabled
                 printf("Failed to init LibVMI library.\n");
                 return 1;
          }
         printf("success to init LibVMI\n");
 
+	GHashTable *traps= g_hash_table_new(g_int64_hash, g_int64_equal);
 	int i;
 	vmi_pause_vm(vmi);
+
+	struct interevent *records[num];
 	//inject int3 to every hypercall handler
 	for (i = 0; i < num; i++) {
 		va=hypercalls[i].address;
 		char *hypercall_name=hypercalls[i].name;
 		//obtain pa using CR3 instead
-		//reg_t cr3;
-		//vmi_get_vcpureg(vmi, &cr3, CR3, 0);
-		//pa = vmi_pagetable_lookup(vmi, cr3, va);
-		pa = vmi_translate_kv2p(vmi,va);
+		reg_t cr3;
+		vmi_get_vcpureg(vmi, &cr3, CR3, 0);
+		pa = vmi_pagetable_lookup(vmi, cr3, va);
+		//pa = vmi_translate_kv2p(vmi,va);
 		if (!pa){
 		    printf("failed to obtain pa of hypercall %s\n",hypercall_name);
 		    continue;
@@ -181,44 +173,41 @@ int main(int argc, char **argv)
 	            printf("FAILED TO INJECT TRAP @ 0x%lx !\n", pa);
 	            continue;
 	        }
-		struct memevent *record = g_malloc0(sizeof(struct memevent));
-		record->pa=pa;
-		record->backup=byte;
-		record->hypercall=hypercall_name;
-		record->event= vmi_get_mem_event(vmi, pa, VMI_MEMEVENT_PAGE);
-
-		if(!record->event){
-			record->event=g_malloc0(sizeof(vmi_event_t));
-	                record->event->data = g_hash_table_new(g_int64_hash, g_int64_equal);
-			record->event->mem_event.hypercall=hypercall_name;
-			SETUP_MEM_EVENT(record->event, record->pa, VMI_MEMEVENT_PAGE,VMI_MEMACCESS_X, int3_cb);
-                        if(VMI_FAILURE==vmi_register_event(vmi,record->event)){//register recall $
-                                printf("*** FAILED TO REGISTER MEMORY GUARD @ PAGE 0x%lx ***\n", pa>>12);
-                                free(record->event);
-                                free(record);
-                                continue;
-                        }
-                        printf("New memory event trap set on page 0x%lx\n", pa >> 12);
-		} else {
-                        printf("Memory event trap already set on page 0x%lx\n", pa >> 12);
-                }
-
-		if(g_hash_table_lookup(record->event->data,&record->pa))
-			printf("pa 0x%lx is already guarded\n",pa);
+		records[i] = g_malloc0(sizeof(struct interevent));
+		records[i]->pa=pa;
+		records[i]->backup=byte;
+		records[i]->hypercall=hypercall_name;
+		if(g_hash_table_lookup(traps,&records[i]->pa))
+			printf("pa is already trapped\n");
 		else{
-			g_hash_table_insert(record->event->data,&record->pa,record);
-			printf("pa 0x%lx is being guarded\n",pa);
+			g_hash_table_insert(traps,&records[i]->pa,records[i]);
+			printf("successfully inject traps at pa 0x%lx\n",pa);
 		}
 	}
-	printf("\nAll %d hypercalls are trapped and guarded!\n",num);
-
+	printf("\nAll %d hypercalls are trapped!\n",num);
 	vmi_resume_vm(vmi);
 
+        vmi_event_t interrupt_event;
+        memset(&interrupt_event, 0, sizeof(vmi_event_t));
+        interrupt_event.type = VMI_EVENT_INTERRUPT;
+        interrupt_event.interrupt_event.intr = INT3;
+        interrupt_event.callback = int3_cb;
+        interrupt_event.data = traps;//
+
+	if (VMI_SUCCESS!=vmi_register_event(vmi, &interrupt_event)){
+		printf("*** FAILED TO REGISTER INTERRUPT EVENT\n");
+		for(i=0;i<num;i++)
+			free(records[i]);
+		interrupted= 1;
+	}
+	else	printf("success register interrupt event\n");
+
+	printf("Waiting for events...\n");
 	while(!interrupted){
         	status = vmi_events_listen(vmi,500);
 	        if (status != VMI_SUCCESS) {
         	    printf("Error waiting for events, quitting...\n");
-	            interrupted = -1;
+	            interrupted = 1;
 		}
         }
 	printf("Finished with test.\n");

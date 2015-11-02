@@ -89,6 +89,7 @@ void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
 void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
     addr_t pa = (event->interrupt_event.gfn << 12) + event->interrupt_event.offset;
     printf("interrupt event happened at pa 0x%lx\n",pa);
+    vmi_clear_event(vmi, event);//important!
 
     //we need to distinguish normal int3 interrupt and injected one
     //for normal one (debugger), just reinject
@@ -111,9 +112,20 @@ void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
     }
 }
 
+static void close_handler(int sig){
+    interrupted = sig;
+}
 
 int main(int argc, char **argv)
 {
+    struct sigaction act;
+    act.sa_handler = close_handler;
+    act.sa_flags = 0;
+    sigemptyset(&act.sa_mask);
+    sigaction(SIGHUP,  &act, NULL);
+    sigaction(SIGTERM, &act, NULL);
+    sigaction(SIGINT,  &act, NULL);
+    sigaction(SIGALRM, &act, NULL);
 	addr_t va, pa;
         vmi_instance_t vmi = NULL;
         status_t status = VMI_SUCCESS;
@@ -133,6 +145,8 @@ int main(int argc, char **argv)
 	GHashTable *traps= g_hash_table_new(g_int64_hash, g_int64_equal);
 	int i;
 	vmi_pause_vm(vmi);
+
+	struct interevent *records[num];
 	//inject int3 to every hypercall handler
 	for (i = 0; i < num; i++) {
 		va=hypercalls[i].address;
@@ -159,39 +173,41 @@ int main(int argc, char **argv)
 	            printf("FAILED TO INJECT TRAP @ 0x%lx !\n", pa);
 	            continue;
 	        }
-		struct interevent *record = g_malloc0(sizeof(struct interevent));
-		record->pa=pa;
-		record->backup=byte;
-		record->hypercall=hypercall_name;
-		if(g_hash_table_lookup(traps,&record->pa))
+		records[i] = g_malloc0(sizeof(struct interevent));
+		records[i]->pa=pa;
+		records[i]->backup=byte;
+		records[i]->hypercall=hypercall_name;
+		if(g_hash_table_lookup(traps,&records[i]->pa))
 			printf("pa is already trapped\n");
 		else{
-			g_hash_table_insert(traps,&record->pa,record);
+			g_hash_table_insert(traps,&records[i]->pa,records[i]);
 			printf("successfully inject traps at pa 0x%lx\n",pa);
 		}
 	}
 	printf("\nAll %d hypercalls are trapped!\n",num);
+	vmi_resume_vm(vmi);
 
         vmi_event_t interrupt_event;
         memset(&interrupt_event, 0, sizeof(vmi_event_t));
         interrupt_event.type = VMI_EVENT_INTERRUPT;
         interrupt_event.interrupt_event.intr = INT3;
         interrupt_event.callback = int3_cb;
-        interrupt_event.data = traps;
+        interrupt_event.data = traps;//
 
-	if (VMI_FAILURE==vmi_register_event(vmi, &interrupt_event)){
+	if (VMI_SUCCESS!=vmi_register_event(vmi, &interrupt_event)){
 		printf("*** FAILED TO REGISTER INTERRUPT EVENT\n");
+		for(i=0;i<num;i++)
+			free(records[i]);
+		interrupted= 1;
 	}
-	else
-		printf("success register interrupt event\n");
+	else	printf("success register interrupt event\n");
 
-	vmi_resume_vm(vmi);
-
+	printf("Waiting for events...\n");
 	while(!interrupted){
         	status = vmi_events_listen(vmi,500);
 	        if (status != VMI_SUCCESS) {
         	    printf("Error waiting for events, quitting...\n");
-	            interrupted = -1;
+	            interrupted = 1;
 		}
         }
 	printf("Finished with test.\n");

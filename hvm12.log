@@ -1,0 +1,1351 @@
+LibVMI Version 0.11.0
+--found Xen
+LibVMI Mode 2
+--completed driver init.
+--got id from name (ubuntu-hvm --> 50)
+**set image_type = ubuntu-hvm
+**set hvm to true (HVM).
+Init xen events with xch == 953c00
+Bound to event channel on port == 28
+--xen: setup live mode
+**set allocated_ram_size = 80043000, max_physical_address = 0xff000000
+**set pae = 1
+**set pse = 1
+**set lme = 1
+**IA-32e paging
+**sanity checking cr3 = 0x0000000013212000
+--succesfully completed architecture init.
+success to init LibVMI
+--PTLookup: lookup vaddr = 0xffff82d08019cab7
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache set 0x13212000
+--xen_get_memory_pfn success on pfn=0x13212
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache set 0x7f466000
+--xen_get_memory_pfn success on pfn=0x7f466
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache set 0x7f463000
+--xen_get_memory_pfn success on pfn=0x7f463
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f39cab7
+--V2P cache set 0xffff82d08019cab7 -- 0x000000007f39cab7 (0x0000000013212000/0xffff82d08019c000)
+
+
+Trying to trap HYPERCALL do_set_trap_table @ VA 0xffff82d08019cab7 PA 0x7f39cab7 PAGE 0x7f39c
+--MEMORY cache set 0x7f39c000
+--xen_get_memory_pfn success on pfn=0x7f39c
+--xen_get_memory_pfn success on pfn=0x7f39c
+successfully inject traps at pa 0x7f39cab7
+--PTLookup: lookup vaddr = 0xffff82d08018dc7f
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f38dc7f
+--V2P cache set 0xffff82d08018dc7f -- 0x000000007f38dc7f (0x0000000013212000/0xffff82d08018d000)
+
+
+Trying to trap HYPERCALL do_mmu_update @ VA 0xffff82d08018dc7f PA 0x7f38dc7f PAGE 0x7f38d
+--MEMORY cache set 0x7f38d000
+--xen_get_memory_pfn success on pfn=0x7f38d
+--xen_get_memory_pfn success on pfn=0x7f38d
+successfully inject traps at pa 0x7f38dc7f
+--PTLookup: lookup vaddr = 0xffff82d08018b122
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f38b122
+--V2P cache set 0xffff82d08018b122 -- 0x000000007f38b122 (0x0000000013212000/0xffff82d08018b000)
+
+
+Trying to trap HYPERCALL do_set_gdt @ VA 0xffff82d08018b122 PA 0x7f38b122 PAGE 0x7f38b
+--MEMORY cache set 0x7f38b000
+--xen_get_memory_pfn success on pfn=0x7f38b
+--xen_get_memory_pfn success on pfn=0x7f38b
+successfully inject traps at pa 0x7f38b122
+--PTLookup: lookup vaddr = 0xffff82d08023129e
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463008pde_value= 0x000000007f4001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f43129e
+--V2P cache set 0xffff82d08023129e -- 0x000000007f43129e (0x0000000013212000/0xffff82d080231000)
+
+
+Trying to trap HYPERCALL do_stack_switch @ VA 0xffff82d08023129e PA 0x7f43129e PAGE 0x7f431
+--MEMORY cache set 0x7f431000
+--xen_get_memory_pfn success on pfn=0x7f431
+--xen_get_memory_pfn success on pfn=0x7f431
+successfully inject traps at pa 0x7f43129e
+--PTLookup: lookup vaddr = 0xffff82d0802347d6
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463008pde_value= 0x000000007f4001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f4347d6
+--V2P cache set 0xffff82d0802347d6 -- 0x000000007f4347d6 (0x0000000013212000/0xffff82d080234000)
+
+
+Trying to trap HYPERCALL do_set_callbacks @ VA 0xffff82d0802347d6 PA 0x7f4347d6 PAGE 0x7f434
+--MEMORY cache set 0x7f434000
+--xen_get_memory_pfn success on pfn=0x7f434
+--xen_get_memory_pfn success on pfn=0x7f434
+successfully inject traps at pa 0x7f4347d6
+--PTLookup: lookup vaddr = 0xffff82d08019bd2e
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f39bd2e
+--V2P cache set 0xffff82d08019bd2e -- 0x000000007f39bd2e (0x0000000013212000/0xffff82d08019b000)
+
+
+Trying to trap HYPERCALL do_fpu_taskswitch @ VA 0xffff82d08019bd2e PA 0x7f39bd2e PAGE 0x7f39b
+--MEMORY cache set 0x7f39b000
+--xen_get_memory_pfn success on pfn=0x7f39b
+--xen_get_memory_pfn success on pfn=0x7f39b
+successfully inject traps at pa 0x7f39bd2e
+--PTLookup: lookup vaddr = 0xffff82d080128090
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f328090
+--V2P cache set 0xffff82d080128090 -- 0x000000007f328090 (0x0000000013212000/0xffff82d080128000)
+
+
+Trying to trap HYPERCALL do_sched_op_compat @ VA 0xffff82d080128090 PA 0x7f328090 PAGE 0x7f328
+--MEMORY cache set 0x7f328000
+--xen_get_memory_pfn success on pfn=0x7f328
+--xen_get_memory_pfn success on pfn=0x7f328
+successfully inject traps at pa 0x7f328090
+--PTLookup: lookup vaddr = 0xffff82d080174b40
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f374b40
+--V2P cache set 0xffff82d080174b40 -- 0x000000007f374b40 (0x0000000013212000/0xffff82d080174000)
+
+
+Trying to trap HYPERCALL do_platform_op @ VA 0xffff82d080174b40 PA 0x7f374b40 PAGE 0x7f374
+--MEMORY cache set 0x7f374000
+--xen_get_memory_pfn success on pfn=0x7f374
+--xen_get_memory_pfn success on pfn=0x7f374
+successfully inject traps at pa 0x7f374b40
+--PTLookup: lookup vaddr = 0xffff82d08019d000
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f39d000
+--V2P cache set 0xffff82d08019d000 -- 0x000000007f39d000 (0x0000000013212000/0xffff82d08019d000)
+
+
+Trying to trap HYPERCALL do_set_debugreg @ VA 0xffff82d08019d000 PA 0x7f39d000 PAGE 0x7f39d
+--MEMORY cache set 0x7f39d000
+--xen_get_memory_pfn success on pfn=0x7f39d
+--xen_get_memory_pfn success on pfn=0x7f39d
+successfully inject traps at pa 0x7f39d000
+--V2P cache hit 0xffff82d08019d023 -- 0x000000007f39d023 (0x0000000013212000/0xffff82d08019d000)
+--MEMORY cache set 0x7f39d000
+--xen_get_memory_pfn success on pfn=0x7f39d
+
+
+Trying to trap HYPERCALL do_get_debugreg @ VA 0xffff82d08019d023 PA 0x7f39d023 PAGE 0x7f39d
+--MEMORY cache hit 0x7f39d000
+--xen_get_memory_pfn success on pfn=0x7f39d
+successfully inject traps at pa 0x7f39d023
+--PTLookup: lookup vaddr = 0xffff82d08018ac73
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f38ac73
+--V2P cache set 0xffff82d08018ac73 -- 0x000000007f38ac73 (0x0000000013212000/0xffff82d08018a000)
+
+
+Trying to trap HYPERCALL do_update_descriptor @ VA 0xffff82d08018ac73 PA 0x7f38ac73 PAGE 0x7f38a
+--MEMORY cache set 0x7f38a000
+--xen_get_memory_pfn success on pfn=0x7f38a
+--xen_get_memory_pfn success on pfn=0x7f38a
+successfully inject traps at pa 0x7f38ac73
+--PTLookup: lookup vaddr = 0xffff82d0801126ee
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f3126ee
+--V2P cache set 0xffff82d0801126ee -- 0x000000007f3126ee (0x0000000013212000/0xffff82d080112000)
+
+
+Trying to trap HYPERCALL do_ni_hypercall @ VA 0xffff82d0801126ee PA 0x7f3126ee PAGE 0x7f312
+--MEMORY cache set 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+--xen_get_memory_pfn success on pfn=0x7f312
+successfully inject traps at pa 0x7f3126ee
+--PTLookup: lookup vaddr = 0xffff82d0801166b7
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f3166b7
+--V2P cache set 0xffff82d0801166b7 -- 0x000000007f3166b7 (0x0000000013212000/0xffff82d080116000)
+
+
+Trying to trap HYPERCALL do_memory_op @ VA 0xffff82d0801166b7 PA 0x7f3166b7 PAGE 0x7f316
+--MEMORY cache set 0x7f316000
+--xen_get_memory_pfn success on pfn=0x7f316
+--xen_get_memory_pfn success on pfn=0x7f316
+successfully inject traps at pa 0x7f3166b7
+--PTLookup: lookup vaddr = 0xffff82d0801190f9
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f3190f9
+--V2P cache set 0xffff82d0801190f9 -- 0x000000007f3190f9 (0x0000000013212000/0xffff82d080119000)
+
+
+Trying to trap HYPERCALL do_multicall @ VA 0xffff82d0801190f9 PA 0x7f3190f9 PAGE 0x7f319
+--MEMORY cache set 0x7f319000
+--xen_get_memory_pfn success on pfn=0x7f319
+--xen_get_memory_pfn success on pfn=0x7f319
+successfully inject traps at pa 0x7f3190f9
+--PTLookup: lookup vaddr = 0xffff82d08018993c
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f38993c
+--V2P cache set 0xffff82d08018993c -- 0x000000007f38993c (0x0000000013212000/0xffff82d080189000)
+
+
+Trying to trap HYPERCALL do_update_va_mapping @ VA 0xffff82d08018993c PA 0x7f38993c PAGE 0x7f389
+--MEMORY cache set 0x7f389000
+--xen_get_memory_pfn success on pfn=0x7f389
+--xen_get_memory_pfn success on pfn=0x7f389
+successfully inject traps at pa 0x7f38993c
+--V2P cache hit 0xffff82d0801284f0 -- 0x000000007f3284f0 (0x0000000013212000/0xffff82d080128000)
+--MEMORY cache set 0x7f328000
+--xen_get_memory_pfn success on pfn=0x7f328
+
+
+Trying to trap HYPERCALL do_set_timer_op @ VA 0xffff82d0801284f0 PA 0x7f3284f0 PAGE 0x7f328
+--MEMORY cache hit 0x7f328000
+--xen_get_memory_pfn success on pfn=0x7f328
+successfully inject traps at pa 0x7f3284f0
+--PTLookup: lookup vaddr = 0xffff82d08016b700
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f36b700
+--V2P cache set 0xffff82d08016b700 -- 0x000000007f36b700 (0x0000000013212000/0xffff82d08016b000)
+
+
+Trying to trap HYPERCALL do_event_channel_op_compat @ VA 0xffff82d08016b700 PA 0x7f36b700 PAGE 0x7f36b
+--MEMORY cache set 0x7f36b000
+--xen_get_memory_pfn success on pfn=0x7f36b
+--xen_get_memory_pfn success on pfn=0x7f36b
+successfully inject traps at pa 0x7f36b700
+--V2P cache hit 0xffff82d080112130 -- 0x000000007f312130 (0x0000000013212000/0xffff82d080112000)
+--MEMORY cache set 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+
+
+Trying to trap HYPERCALL do_xen_version @ VA 0xffff82d080112130 PA 0x7f312130 PAGE 0x7f312
+--MEMORY cache hit 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+successfully inject traps at pa 0x7f312130
+--PTLookup: lookup vaddr = 0xffff82d08013fbb4
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f33fbb4
+--V2P cache set 0xffff82d08013fbb4 -- 0x000000007f33fbb4 (0x0000000013212000/0xffff82d08013f000)
+
+
+Trying to trap HYPERCALL do_console_io @ VA 0xffff82d08013fbb4 PA 0x7f33fbb4 PAGE 0x7f33f
+--MEMORY cache set 0x7f33f000
+--xen_get_memory_pfn success on pfn=0x7f33f
+--xen_get_memory_pfn success on pfn=0x7f33f
+successfully inject traps at pa 0x7f33fbb4
+--V2P cache hit 0xffff82d08016b691 -- 0x000000007f36b691 (0x0000000013212000/0xffff82d08016b000)
+--MEMORY cache set 0x7f36b000
+--xen_get_memory_pfn success on pfn=0x7f36b
+
+
+Trying to trap HYPERCALL do_physdev_op_compat @ VA 0xffff82d08016b691 PA 0x7f36b691 PAGE 0x7f36b
+--MEMORY cache hit 0x7f36b000
+--xen_get_memory_pfn success on pfn=0x7f36b
+successfully inject traps at pa 0x7f36b691
+--PTLookup: lookup vaddr = 0xffff82d08010e62c
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f30e62c
+--V2P cache set 0xffff82d08010e62c -- 0x000000007f30e62c (0x0000000013212000/0xffff82d08010e000)
+
+
+Trying to trap HYPERCALL do_grant_table_op @ VA 0xffff82d08010e62c PA 0x7f30e62c PAGE 0x7f30e
+--MEMORY cache set 0x7f30e000
+--xen_get_memory_pfn success on pfn=0x7f30e
+--xen_get_memory_pfn success on pfn=0x7f30e
+successfully inject traps at pa 0x7f30e62c
+--V2P cache hit 0xffff82d0801126c8 -- 0x000000007f3126c8 (0x0000000013212000/0xffff82d080112000)
+--MEMORY cache set 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+
+
+Trying to trap HYPERCALL do_vm_assist @ VA 0xffff82d0801126c8 PA 0x7f3126c8 PAGE 0x7f312
+--MEMORY cache hit 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+successfully inject traps at pa 0x7f3126c8
+--V2P cache hit 0xffff82d0801898d1 -- 0x000000007f3898d1 (0x0000000013212000/0xffff82d080189000)
+--MEMORY cache set 0x7f389000
+--xen_get_memory_pfn success on pfn=0x7f389
+
+
+Trying to trap HYPERCALL do_update_va_mapping_otherdomain @ VA 0xffff82d0801898d1 PA 0x7f3898d1 PAGE 0x7f389
+--MEMORY cache hit 0x7f389000
+--xen_get_memory_pfn success on pfn=0x7f389
+successfully inject traps at pa 0x7f3898d1
+--V2P cache hit 0xffff82d08023429c -- 0x000000007f43429c (0x0000000013212000/0xffff82d080234000)
+--MEMORY cache set 0x7f434000
+--xen_get_memory_pfn success on pfn=0x7f434
+
+
+Trying to trap HYPERCALL do_iret @ VA 0xffff82d08023429c PA 0x7f43429c PAGE 0x7f434
+--MEMORY cache hit 0x7f434000
+--xen_get_memory_pfn success on pfn=0x7f434
+successfully inject traps at pa 0x7f43429c
+--PTLookup: lookup vaddr = 0xffff82d080105f41
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f305f41
+--V2P cache set 0xffff82d080105f41 -- 0x000000007f305f41 (0x0000000013212000/0xffff82d080105000)
+
+
+Trying to trap HYPERCALL do_vcpu_op @ VA 0xffff82d080105f41 PA 0x7f305f41 PAGE 0x7f305
+--MEMORY cache set 0x7f305000
+--xen_get_memory_pfn success on pfn=0x7f305
+--xen_get_memory_pfn success on pfn=0x7f305
+successfully inject traps at pa 0x7f305f41
+--V2P cache hit 0xffff82d080231308 -- 0x000000007f431308 (0x0000000013212000/0xffff82d080231000)
+--MEMORY cache set 0x7f431000
+--xen_get_memory_pfn success on pfn=0x7f431
+
+
+Trying to trap HYPERCALL do_set_segment_base @ VA 0xffff82d080231308 PA 0x7f431308 PAGE 0x7f431
+--MEMORY cache hit 0x7f431000
+--xen_get_memory_pfn success on pfn=0x7f431
+successfully inject traps at pa 0x7f431308
+--PTLookup: lookup vaddr = 0xffff82d08018c100
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f38c100
+--V2P cache set 0xffff82d08018c100 -- 0x000000007f38c100 (0x0000000013212000/0xffff82d08018c000)
+
+
+Trying to trap HYPERCALL do_mmuext_op @ VA 0xffff82d08018c100 PA 0x7f38c100 PAGE 0x7f38c
+--MEMORY cache set 0x7f38c000
+--xen_get_memory_pfn success on pfn=0x7f38c
+--xen_get_memory_pfn success on pfn=0x7f38c
+successfully inject traps at pa 0x7f38c100
+--PTLookup: lookup vaddr = 0xffff82d08015917f
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f35917f
+--V2P cache set 0xffff82d08015917f -- 0x000000007f35917f (0x0000000013212000/0xffff82d080159000)
+
+
+Trying to trap HYPERCALL do_xsm_op @ VA 0xffff82d08015917f PA 0x7f35917f PAGE 0x7f359
+--MEMORY cache set 0x7f359000
+--xen_get_memory_pfn success on pfn=0x7f359
+--xen_get_memory_pfn success on pfn=0x7f359
+successfully inject traps at pa 0x7f35917f
+--V2P cache hit 0xffff82d08011264c -- 0x000000007f31264c (0x0000000013212000/0xffff82d080112000)
+--MEMORY cache set 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+
+
+Trying to trap HYPERCALL do_nmi_op @ VA 0xffff82d08011264c PA 0x7f31264c PAGE 0x7f312
+--MEMORY cache hit 0x7f312000
+--xen_get_memory_pfn success on pfn=0x7f312
+successfully inject traps at pa 0x7f31264c
+--V2P cache hit 0xffff82d080128134 -- 0x000000007f328134 (0x0000000013212000/0xffff82d080128000)
+--MEMORY cache set 0x7f328000
+--xen_get_memory_pfn success on pfn=0x7f328
+
+
+Trying to trap HYPERCALL do_sched_op @ VA 0xffff82d080128134 PA 0x7f328134 PAGE 0x7f328
+--MEMORY cache hit 0x7f328000
+--xen_get_memory_pfn success on pfn=0x7f328
+successfully inject traps at pa 0x7f328134
+--V2P cache hit 0xffff82d0802346d0 -- 0x000000007f4346d0 (0x0000000013212000/0xffff82d080234000)
+--MEMORY cache set 0x7f434000
+--xen_get_memory_pfn success on pfn=0x7f434
+
+
+Trying to trap HYPERCALL do_callback_op @ VA 0xffff82d0802346d0 PA 0x7f4346d0 PAGE 0x7f434
+--MEMORY cache hit 0x7f434000
+--xen_get_memory_pfn success on pfn=0x7f434
+successfully inject traps at pa 0x7f4346d0
+--PTLookup: lookup vaddr = 0xffff82d08013bbd2
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f33bbd2
+--V2P cache set 0xffff82d08013bbd2 -- 0x000000007f33bbd2 (0x0000000013212000/0xffff82d08013b000)
+
+
+Trying to trap HYPERCALL do_xenoprof_op @ VA 0xffff82d08013bbd2 PA 0x7f33bbd2 PAGE 0x7f33b
+--MEMORY cache set 0x7f33b000
+--xen_get_memory_pfn success on pfn=0x7f33b
+--xen_get_memory_pfn success on pfn=0x7f33b
+successfully inject traps at pa 0x7f33bbd2
+--PTLookup: lookup vaddr = 0xffff82d080107e07
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f307e07
+--V2P cache set 0xffff82d080107e07 -- 0x000000007f307e07 (0x0000000013212000/0xffff82d080107000)
+
+
+Trying to trap HYPERCALL do_event_channel_op @ VA 0xffff82d080107e07 PA 0x7f307e07 PAGE 0x7f307
+--MEMORY cache set 0x7f307000
+--xen_get_memory_pfn success on pfn=0x7f307
+--xen_get_memory_pfn success on pfn=0x7f307
+successfully inject traps at pa 0x7f307e07
+--PTLookup: lookup vaddr = 0xffff82d080192794
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f392794
+--V2P cache set 0xffff82d080192794 -- 0x000000007f392794 (0x0000000013212000/0xffff82d080192000)
+
+
+Trying to trap HYPERCALL do_physdev_op @ VA 0xffff82d080192794 PA 0x7f392794 PAGE 0x7f392
+--MEMORY cache set 0x7f392000
+--xen_get_memory_pfn success on pfn=0x7f392
+--xen_get_memory_pfn success on pfn=0x7f392
+successfully inject traps at pa 0x7f392794
+--PTLookup: lookup vaddr = 0xffff82d0801c988e
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f3c988e
+--V2P cache set 0xffff82d0801c988e -- 0x000000007f3c988e (0x0000000013212000/0xffff82d0801c9000)
+
+
+Trying to trap HYPERCALL do_hvm_op @ VA 0xffff82d0801c988e PA 0x7f3c988e PAGE 0x7f3c9
+--MEMORY cache set 0x7f3c9000
+--xen_get_memory_pfn success on pfn=0x7f3c9
+--xen_get_memory_pfn success on pfn=0x7f3c9
+successfully inject traps at pa 0x7f3c988e
+--PTLookup: lookup vaddr = 0xffff82d08012aba9
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f32aba9
+--V2P cache set 0xffff82d08012aba9 -- 0x000000007f32aba9 (0x0000000013212000/0xffff82d08012a000)
+
+
+Trying to trap HYPERCALL do_sysctl @ VA 0xffff82d08012aba9 PA 0x7f32aba9 PAGE 0x7f32a
+--MEMORY cache set 0x7f32a000
+--xen_get_memory_pfn success on pfn=0x7f32a
+--xen_get_memory_pfn success on pfn=0x7f32a
+successfully inject traps at pa 0x7f32aba9
+--PTLookup: lookup vaddr = 0xffff82d080102fa9
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f302fa9
+--V2P cache set 0xffff82d080102fa9 -- 0x000000007f302fa9 (0x0000000013212000/0xffff82d080102000)
+
+
+Trying to trap HYPERCALL do_domctl @ VA 0xffff82d080102fa9 PA 0x7f302fa9 PAGE 0x7f302
+--MEMORY cache set 0x7f302000
+--xen_get_memory_pfn success on pfn=0x7f302
+--xen_get_memory_pfn success on pfn=0x7f302
+successfully inject traps at pa 0x7f302fa9
+--PTLookup: lookup vaddr = 0xffff82d080114f7c
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f314f7c
+--V2P cache set 0xffff82d080114f7c -- 0x000000007f314f7c (0x0000000013212000/0xffff82d080114000)
+
+
+Trying to trap HYPERCALL do_kexec_op @ VA 0xffff82d080114f7c PA 0x7f314f7c PAGE 0x7f314
+--MEMORY cache set 0x7f314000
+--xen_get_memory_pfn success on pfn=0x7f314
+--xen_get_memory_pfn success on pfn=0x7f314
+successfully inject traps at pa 0x7f314f7c
+--PTLookup: lookup vaddr = 0xffff82d080136e42
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f336e42
+--V2P cache set 0xffff82d080136e42 -- 0x000000007f336e42 (0x0000000013212000/0xffff82d080136000)
+
+
+Trying to trap HYPERCALL do_tmem_op @ VA 0xffff82d080136e42 PA 0x7f336e42 PAGE 0x7f336
+--MEMORY cache set 0x7f336000
+--xen_get_memory_pfn success on pfn=0x7f336
+--xen_get_memory_pfn success on pfn=0x7f336
+successfully inject traps at pa 0x7f336e42
+--PTLookup: lookup vaddr = 0xffff82d0801c6269
+--PTLookup: dtb = 0x0000000013212000
+--MEMORY cache hit 0x13212000
+--PTLookup: pml4e_address = 0x0000000013212828
+--MEMORY cache hit 0x7f466000
+--PTLookup: pdpte_address = 0x000000007f466a10, pdpte_value = 0x000000007f463063
+--MEMORY cache hit 0x7f463000
+--PTLookup: pde_address = 0x000000007f463000pde_value= 0x000000007f2001e3
+--PTLookup: 2MB page
+--PTLookup: paddr = 0x000000007f3c6269
+--V2P cache set 0xffff82d0801c6269 -- 0x000000007f3c6269 (0x0000000013212000/0xffff82d0801c6000)
+
+
+Trying to trap HYPERCALL hvm_memory_op @ VA 0xffff82d0801c6269 PA 0x7f3c6269 PAGE 0x7f3c6
+--MEMORY cache set 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+--xen_get_memory_pfn success on pfn=0x7f3c6
+successfully inject traps at pa 0x7f3c6269
+--V2P cache hit 0xffff82d0801c6463 -- 0x000000007f3c6463 (0x0000000013212000/0xffff82d0801c6000)
+--MEMORY cache set 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+
+
+Trying to trap HYPERCALL hvm_grant_table_op @ VA 0xffff82d0801c6463 PA 0x7f3c6463 PAGE 0x7f3c6
+--MEMORY cache hit 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+successfully inject traps at pa 0x7f3c6463
+--V2P cache hit 0xffff82d0801c62cb -- 0x000000007f3c62cb (0x0000000013212000/0xffff82d0801c6000)
+--MEMORY cache set 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+
+
+Trying to trap HYPERCALL hvm_vcpu_op @ VA 0xffff82d0801c62cb PA 0x7f3c62cb PAGE 0x7f3c6
+--MEMORY cache hit 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+successfully inject traps at pa 0x7f3c62cb
+--V2P cache hit 0xffff82d0801c63fb -- 0x000000007f3c63fb (0x0000000013212000/0xffff82d0801c6000)
+--MEMORY cache set 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+
+
+Trying to trap HYPERCALL hvm_physdev_op @ VA 0xffff82d0801c63fb PA 0x7f3c63fb PAGE 0x7f3c6
+--MEMORY cache hit 0x7f3c6000
+--xen_get_memory_pfn success on pfn=0x7f3c6
+successfully inject traps at pa 0x7f3c63fb
+
+All 43 hypercalls are trapped!
+Enabled event on interrupt: 1
+success register interrupt event
+Waiting for events...
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen events...(500 ms)
+--Waiting for xen 
