@@ -87,6 +87,7 @@ void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
 }
 
 void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
+    printf("entering int3_cb\n");
     addr_t pa = (event->interrupt_event.gfn << 12) + event->interrupt_event.offset;
     printf("interrupt event happened at pa 0x%lx\n",pa);
     vmi_clear_event(vmi, event);//important!

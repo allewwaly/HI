@@ -112,6 +112,12 @@ void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
     }
 }
 
+int k=0;
+void msr_write_cb(vmi_instance_t vmi, vmi_event_t *event){
+    printf("%d MSR write happened: MSR=%lx Value=%lx\n",k++, event->reg_event.context, event->reg_event.value);
+}
+
+
 static void close_handler(int sig){
     interrupted = sig;
 }
@@ -154,8 +160,17 @@ int main(int argc, char **argv)
 		//obtain pa using CR3 instead
 		reg_t cr3;
 		vmi_get_vcpureg(vmi, &cr3, CR3, 0);
-		pa = vmi_pagetable_lookup(vmi, cr3, va);
+
 		//pa = vmi_translate_kv2p(vmi,va);
+
+		/*FILE *fp=popen("./cr3.sh","r");
+		char buffer[50];
+		fgets(buffer,sizeof(buffer),fp);
+		reg_t cr3=strtoul(buffer,NULL,16);
+		printf("the cr3 value is:0x%lx\n",cr3);*/
+		//reg_t cr3=0x75c0e000;
+		pa = vmi_pagetable_lookup(vmi, cr3, va);
+
 		if (!pa){
 		    printf("failed to obtain pa of hypercall %s\n",hypercall_name);
 		    continue;
@@ -192,22 +207,32 @@ int main(int argc, char **argv)
         interrupt_event.type = VMI_EVENT_INTERRUPT;
         interrupt_event.interrupt_event.intr = INT3;
         interrupt_event.callback = int3_cb;
-        interrupt_event.data = traps;//
+        interrupt_event.data = traps;
+
+	/* Register event to track any writes to a MSR. */
+/*	vmi_event_t msr_event;
+	memset(&msr_event, 0, sizeof(vmi_event_t));
+	msr_event.type = VMI_EVENT_REGISTER;
+	msr_event.reg_event.reg = CR3;
+	msr_event.reg_event.in_access = VMI_REGACCESS_W;
+	msr_event.callback = msr_write_cb;
+	msr_event.reg_event.equal = 0x75c0e000;
+*/	//vmi_register_event(vmi, &msr_event);
 
 	if (VMI_SUCCESS!=vmi_register_event(vmi, &interrupt_event)){
-		printf("*** FAILED TO REGISTER INTERRUPT EVENT\n");
+		printf("*** FAILED TO REGISTER MSR EVENT\n");
 		for(i=0;i<num;i++)
 			free(records[i]);
-		interrupted= 1;
+		interrupted= -1;
 	}
-	else	printf("success register interrupt event\n");
+	else	printf("success register MSR event\n");
 
 	printf("Waiting for events...\n");
 	while(!interrupted){
         	status = vmi_events_listen(vmi,500);
 	        if (status != VMI_SUCCESS) {
         	    printf("Error waiting for events, quitting...\n");
-	            interrupted = 1;
+	            interrupted = -1;
 		}
         }
 	printf("Finished with test.\n");
