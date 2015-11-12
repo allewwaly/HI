@@ -108,7 +108,7 @@ void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
 
 void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
     addr_t pa = (event->mem_event.gfn << 12) + event->mem_event.offset;
-    printf("memory event happened at pa 0x%lx of hypercall %s\n",pa,event->mem_event.hypercall);
+    printf("memory event happened at pa 0x%lx of hypercall %s vcpu %x\n",pa,event->mem_event.hypercall,event->vcpu_id);
     vmi_clear_event(vmi, event);
 
     //we need to distinguish normal int3 interrupt and injected one
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
         }
         char *name=argv[1];
 	//vmi_pid_t pid=atoi(argv[3]);how to init a vmi for hypervisor?
-        if (vmi_init(&vmi, VMI_AUTO | VMI_INIT_COMPLETE | VMI_INIT_EVENTS, name) == VMI_FAILURE) {//initialize th vmi instance with event enabled
+        if (vmi_init(&vmi, VMI_AUTO | VMI_INIT_PARTIAL | VMI_INIT_EVENTS, name) == VMI_FAILURE) {//initialize th vmi instance with event enabled
                 printf("Failed to init LibVMI library.\n");
                 return 1;
          }
@@ -160,10 +160,10 @@ int main(int argc, char **argv)
 		va=hypercalls[i].address;
 		char *hypercall_name=hypercalls[i].name;
 		//obtain pa using CR3 instead
-		//reg_t cr3;
-		//vmi_get_vcpureg(vmi, &cr3, CR3, 0);
-		//pa = vmi_pagetable_lookup(vmi, cr3, va);
-		pa = vmi_translate_kv2p(vmi,va);
+		reg_t cr3;
+		vmi_get_vcpureg(vmi, &cr3, CR3, 0);
+		pa = vmi_pagetable_lookup(vmi, cr3, va);
+		//pa = vmi_translate_kv2p(vmi,va);
 		if (!pa){
 		    printf("failed to obtain pa of hypercall %s\n",hypercall_name);
 		    continue;
