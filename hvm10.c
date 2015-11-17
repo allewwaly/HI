@@ -8,7 +8,7 @@
 #include <glib.h>
 #include <signal.h>
 
-#define num 43
+#define num 13
 
 #define ghashtable_foreach(table, i, key, val) \
       g_hash_table_iter_init(&i, table); \
@@ -28,6 +28,8 @@ struct hypercall_table{
 	int size;
 }__attribute__ ((packed));
 
+//hypercalls of pv guests from /xen/include/public/xen.h
+/*
 static struct hypercall_table hypercalls[num]={
         {"do_set_trap_table",0x82d08019cab7,575},
         {"do_mmu_update",0x82d08018dc7f,6238},
@@ -73,8 +75,26 @@ static struct hypercall_table hypercalls[num]={
         {"hvm_vcpu_op",0x82d0801c62cb,43},
         {"hvm_physdev_op",0x82d0801c63fb,104},
 };
+*/
+//hvm_hypercall64_table from /xen/arch/x86/hvm/hvm.c
+static  struct hypercall_table hypercalls[num]={
+        {"hvm_memory_op",0xffff82d0801c6269,98},
+        {"hvm_grant_table_op",0xffff82d0801c6463,73},
+        {"hvm_vcpu_op",0xffff82d0801c62cb,43},
+        {"hvm_physdev_op",0xffff82d0801c63fb,104},
+        {"do_xen_version",0xffff82d080112130,1308},
+        {"do_console_io",0xffff82d08013fbb4,1158},
+        {"do_event_channel_op",0xffff82d080107e07,5449},
+//        {"do_sched_op",0xffff82d080128134,956}, //uncomment it would cause the guest reboot
+        {"do_set_timer_op",0xffff82d0801284f0,220},
+        {"do_xsm_op",0xffff82d08015917f,19},
+        {"do_hvm_op",0xffff82d0801c988e,7720},
+        {"do_sysctl",0xffff82d08012aba9,3796},
+        {"do_domctl",0xffff82d080102fa9,5294},
+        {"do_tmem_op",0xffff82d080136e42,5031},
+};
 
-void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
+event_response_t  vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
 
     uint8_t trap = 0xCC;
     addr_t pa;
@@ -85,18 +105,13 @@ void vmi_reset_trap(vmi_instance_t vmi, vmi_event_t *event) {
         printf("Resetting trap @ 0x%lx.\n", pa);
         vmi_write_8_pa(vmi, pa, &trap);
     }
+    return 0;
 }
 
-void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
+event_response_t  int3_cb(vmi_instance_t vmi, vmi_event_t *event){
     printf("entering int3_cb\n");
     addr_t pa = (event->interrupt_event.gfn << 12) + event->interrupt_event.offset;
     printf("interrupt event happened at pa 0x%lx\n",pa);
-    vmi_clear_event(vmi, event);//important!
-
-    //we need to distinguish normal int3 interrupt and injected one
-    //for normal one (debugger), just reinject
-    //for injected one, write back the original value to make it executable
-
     GHashTable *containers = event->data;
     GHashTableIter i;
     addr_t *key = NULL;
@@ -108,10 +123,12 @@ void int3_cb(vmi_instance_t vmi, vmi_event_t *event){
                 vmi_write_8_pa(vmi, s->pa, &s->backup);
                 event->interrupt_event.reinject = 0;
                 vmi_step_event(vmi, event, event->vcpu_id, 1, vmi_reset_trap);
+		return 1;
 	}
-	else
-		event->interrupt_event.reinject = 1;
+//	else
     }
+    event->interrupt_event.reinject = 1;
+    return 0;
 }
 
 static void close_handler(int sig){
@@ -163,6 +180,9 @@ int main(int argc, char **argv)
 		    continue;
 		}
 
+                if (g_hash_table_lookup(traps, &pa))
+                    continue;
+
         	printf("\n\nTrying to trap HYPERCALL %s @ VA 0x%lx PA 0x%lx PAGE 0x%lx\n", hypercall_name, va, pa, pa >> 12);
 
 		vmi_read_8_pa(vmi, pa, &byte);//read the first byte of the pa
@@ -179,15 +199,10 @@ int main(int argc, char **argv)
 		records[i]->pa=pa;
 		records[i]->backup=byte;
 		records[i]->hypercall=hypercall_name;
-		if(g_hash_table_lookup(traps,&records[i]->pa))
-			printf("pa is already trapped\n");
-		else{
-			g_hash_table_insert(traps,&records[i]->pa,records[i]);
-			printf("successfully inject traps at pa 0x%lx\n",pa);
-		}
+		g_hash_table_insert(traps,&records[i]->pa,records[i]);
+		printf("successfully inject traps at pa 0x%lx\n",pa);
 	}
 	printf("\nAll %d hypercalls are trapped!\n",num);
-	vmi_resume_vm(vmi);
 
         vmi_event_t interrupt_event;
         memset(&interrupt_event, 0, sizeof(vmi_event_t));
@@ -198,21 +213,34 @@ int main(int argc, char **argv)
 
 	if (VMI_SUCCESS!=vmi_register_event(vmi, &interrupt_event)){
 		printf("*** FAILED TO REGISTER INTERRUPT EVENT\n");
-		for(i=0;i<num;i++)
-			free(records[i]);
-		interrupted= 1;
+		interrupted= -1;
 	}
 	else	printf("success register interrupt event\n");
 
-	printf("Waiting for events...\n");
+	vmi_resume_vm(vmi);
+
 	while(!interrupted){
+		printf("Waiting for events...\n");
         	status = vmi_events_listen(vmi,500);
 	        if (status != VMI_SUCCESS) {
         	    printf("Error waiting for events, quitting...\n");
-	            interrupted = 1;
+	            interrupted = -1;
 		}
         }
 	printf("Finished with test.\n");
+
+
+        GHashTableIter j;
+        addr_t *key = NULL;
+        struct interevent *s = NULL;
+        ghashtable_foreach(traps, j, key, s){
+		if(s){
+			vmi_write_8_pa(vmi, s->pa, &s->backup);
+			free(s);
+		}
+	}
+	vmi_clear_event(vmi,&interrupt_event);
+	g_hash_table_destroy(traps);
         vmi_destroy(vmi);
         return 1;
 }
